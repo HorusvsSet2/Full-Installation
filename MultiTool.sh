@@ -54,17 +54,21 @@ menu_inicio() {
     echo "     1) Holehe           3) Maigret          5) Mr. Holmes"
     echo "     2) Zehef            4) Sherlock         6) Argus"
     echo -n
-    echo "============================ PHISHING ============================="
+    echo "========================== PHISHING ==========================="
     echo "     7) PyPhishing"
     echo "     8) MaxPhisher"
+    echo "     9) ZPhisher"
     echo -n
     echo "============================ NMAP ============================="
-    echo "     9) IP conectivity"
-    echo "     10) Ports scans"
-    echo "     11) Services scans"
-    echo "     12) Vulnerabilities scan"
+    echo "     10) IP conectivity"
+    echo "     11) Ports scans"
+    echo "     12) Services scans"
+    echo "     13) Vulnerabilities scan"
+    echo -n
+    echo "=========================== OTHER ============================="
+    echo "     14) All Hacking"
     echo "==============================================================="
-    echo "13) Exit"
+    echo "15) Exit"
     echo -n
     echo -n "Select an option: "
     read opcion
@@ -79,12 +83,15 @@ menu_inicio() {
 
         7) Phising_PyPhising;;
         8) Phising_MaxPhisher;;
+        9) Phishing_ZPhisher;;
 
-        9) menu_nmap_ip;;
-        10) menu_nmap_ports;;
-        11) menu_nmap_services;;
-        12) menu_nmap_vulns;;
-        13) echo "See you..."; exit 0;;
+        10) menu_nmap_ip;;
+        11) menu_nmap_ports;;
+        12) menu_nmap_services;;
+        13) menu_nmap_vulns;;
+
+        14) Other_AllHacking;;
+        15) echo "See you..."; exit 0;;
         *) echo "Invalid option";;
     esac
 }
@@ -183,6 +190,15 @@ Phising_MaxPhisher() {
     cd ..
 }
 
+Phishing_ZPhisher() {
+    cd Phising
+    cd zphisher
+    bash zphisher.sh
+    read -p "Press ENTER to exit..."
+    cd ..
+    cd ..
+}
+
 menu_nmap_ip() {
     clear
     mostrar_dibujo
@@ -227,6 +243,15 @@ nmap_ip_3() {
     read IP
     sudo nmap "$IP" -sn -PE --reason
     read -p "Press ENTER to exit..."
+}
+
+Other_AllHacking() {
+    cd Other
+    cd ALHacking
+    bash alhack.sh
+    read -p "Press ENTER to exit..."
+    cd ..
+    cd ..
 }
 
 # ===============================
