@@ -11,6 +11,7 @@ cd MultiTool
 
 mkdir OSINT
 mkdir Phising
+mkdir Other
 
 #Descargar MultiTool.sh
 echo -e "\e[34mCopiando bash principal\e[0m"
@@ -147,4 +148,15 @@ python3 -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
 deactivate
+cd ..
+
+#ZPhisher
+git clone --depth=1 https://github.com/htr-tech/zphisher.git
+
+cd ..
+
+#Instalar el contenido de other
+cd Other
+#All Hacking
+git clone https://github.com/4lbH4cker/ALHacking
 cd ..
